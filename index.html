@@ -170,4 +170,1075 @@
             color: var(--coffee);
             -webkit-text-stroke: 3px #ffffff;
             paint-order: stroke fill;
-            font-
+            font-weight: 900;
+        }
+
+        /* 捲軸美化 */
+        .custom-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background-color: var(--lime);
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="overflow-auto w-full min-h-screen flex items-start lg:items-center justify-start lg:justify-center px-6 py-6">
+
+    <!-- iPad 橫向主容器：左右兩大欄位置頂對齊 (items-start)，並加上 min-w-[1060px] 防止小螢幕擠壓變形 -->
+    <div class="w-[1120px] min-w-[1060px] min-h-[640px] flex flex-row items-start justify-between gap-8 pt-2 pb-10 shrink-0 mx-auto">
+
+        <!-- ==================== 左側：狗狗大頭 Logo + 甜點品項框 ==================== -->
+        <div class="w-[590px] shrink-0 flex flex-col justify-start items-center relative">
+
+            <!-- 頂部狗狗 Logo：1:1 嚴格依照《計算機大頭_2.png》原圖線稿比例與非正圓手繪線條 -->
+            <div class="w-[148px] h-[136px] -mb-5 z-20 flex items-center justify-center pointer-events-none select-none">
+                <svg viewBox="0 0 500 480" class="w-full h-full overflow-visible">
+                    <!-- 廚師帽 (上方三個手繪不對稱波浪雲朵圈 + 內部兩條短摺線) -->
+                    <path d="M 190 155 
+                             L 198 115
+                             C 182 95, 192 58, 224 58
+                             C 238 58, 242 82, 236 86
+                             C 230 90, 228 68, 244 50
+                             C 258 36, 284 42, 282 70
+                             C 280 86, 272 86, 274 70
+                             C 276 52, 308 48, 316 74
+                             C 322 94, 306 112, 303 116
+                             L 313 158" 
+                          fill="#ffffff" stroke="#332109" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- 廚師帽內摺線 -->
+                    <path d="M 218 145 L 226 115" stroke="#332109" stroke-width="7.5" stroke-linecap="round"/>
+                    <path d="M 271 143 L 263 115" stroke="#332109" stroke-width="7.5" stroke-linecap="round"/>
+
+                    <!-- 左側垂耳 (高拱起向外垂下，末端回勾至臉側) -->
+                    <path d="M 188 164
+                             C 172 110, 118 114, 86 165
+                             C 60 206, 62 252, 88 260
+                             C 110 266, 120 225, 146 238" 
+                          fill="#ffffff" stroke="#332109" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- 右側垂耳 -->
+                    <path d="M 316 164
+                             C 332 108, 390 114, 420 172
+                             C 442 216, 436 258, 412 264
+                             C 390 268, 382 225, 355 236" 
+                          fill="#ffffff" stroke="#332109" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- 主臉輪廓 (手繪不規則馬鈴薯圓：左頰微寬、右下巴圓弧飽滿，絕非死板正圓) -->
+                    <path d="M 250 143
+                             C 178 143, 142 198, 132 276
+                             C 122 355, 156 418, 238 420
+                             C 322 422, 362 356, 360 274
+                             C 358 196, 322 143, 250 143 Z" 
+                          fill="#ffffff" stroke="#332109" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- 耳根交界處兩個深咖啡色厚水滴斑塊 -->
+                    <path d="M 162 192 C 140 176, 136 158, 152 154 C 166 150, 178 168, 174 182 Z" fill="#332109"/>
+                    <path d="M 340 190 C 362 174, 366 156, 350 152 C 336 148, 324 166, 328 180 Z" fill="#332109"/>
+
+                    <!-- 額頭外側兩撇粗濃八字短眉 -->
+                    <path d="M 174 220 L 189 205" stroke="#332109" stroke-width="11" stroke-linecap="round"/>
+                    <path d="M 309 218 L 293 203" stroke="#332109" stroke-width="11" stroke-linecap="round"/>
+
+                    <!-- 眼睛上方兩道細弧線 (雙眼皮/內眉線) -->
+                    <path d="M 187 232 C 196 226, 209 226, 215 231" fill="none" stroke="#332109" stroke-width="6.5" stroke-linecap="round"/>
+                    <path d="M 265 231 C 273 225, 286 225, 293 230" fill="none" stroke="#332109" stroke-width="6.5" stroke-linecap="round"/>
+
+                    <!-- 左右雙眼 (橫向杏仁橢圓框 + 粗黑直立瞳孔) -->
+                    <ellipse cx="200" cy="259" rx="17" ry="11.5" fill="#ffffff" stroke="#332109" stroke-width="6"/>
+                    <ellipse cx="200" cy="259" rx="7" ry="11" fill="#332109"/>
+
+                    <ellipse cx="276" cy="259" rx="17" ry="11.5" fill="#ffffff" stroke="#332109" stroke-width="6"/>
+                    <ellipse cx="276" cy="259" rx="7" ry="11" fill="#332109"/>
+
+                    <!-- 嘴鼻包 (左右兩瓣飽滿花生狀鬍鬚囊袋 + 下方微笑底線) -->
+                    <!-- 微笑下唇弧線 -->
+                    <path d="M 225 330 C 238 338, 250 335, 257 328" fill="none" stroke="#332109" stroke-width="6.5" stroke-linecap="round"/>
+                    <!-- 左囊袋 -->
+                    <path d="M 240 288
+                             C 210 284, 178 308, 180 336
+                             C 182 358, 208 356, 224 334
+                             C 234 320, 239 304, 240 288 Z" 
+                          fill="#ffffff" stroke="#332109" stroke-width="7.5" stroke-linejoin="round"/>
+                    <!-- 右囊袋 -->
+                    <path d="M 241 288
+                             C 270 284, 298 308, 296 334
+                             C 294 355, 268 354, 254 332
+                             C 246 318, 242 304, 241 288 Z" 
+                          fill="#ffffff" stroke="#332109" stroke-width="7.5" stroke-linejoin="round"/>
+
+                    <!-- 中央深咖啡色圓潤三角鼻頭 -->
+                    <path d="M 232 287 C 235 275, 246 275, 249 287 C 251 293, 230 293, 232 287 Z" fill="#332109"/>
+
+                    <!-- 左側鬍渣小圓點 -->
+                    <circle cx="215" cy="303" r="3.6" fill="#332109"/>
+                    <circle cx="226" cy="309" r="3.6" fill="#332109"/>
+                    <circle cx="206" cy="314" r="3.6" fill="#332109"/>
+                    <circle cx="218" cy="320" r="3.6" fill="#332109"/>
+                    <circle cx="196" cy="324" r="3.6" fill="#332109"/>
+                    <circle cx="208" cy="331" r="3.6" fill="#332109"/>
+                    <circle cx="190" cy="336" r="3.6" fill="#332109"/>
+                    <circle cx="203" cy="342" r="3.6" fill="#332109"/>
+
+                    <!-- 右側鬍渣小圓點 -->
+                    <circle cx="255" cy="302" r="3.6" fill="#332109"/>
+                    <circle cx="268" cy="307" r="3.6" fill="#332109"/>
+                    <circle cx="253" cy="316" r="3.6" fill="#332109"/>
+                    <circle cx="278" cy="317" r="3.6" fill="#332109"/>
+                    <circle cx="264" cy="323" r="3.6" fill="#332109"/>
+                    <circle cx="285" cy="328" r="3.6" fill="#332109"/>
+                    <circle cx="264" cy="336" r="3.6" fill="#332109"/>
+                    <circle cx="279" cy="339" r="3.6" fill="#332109"/>
+
+                    <!-- 右下巴手繪弧線 -->
+                    <path d="M 224 398 C 252 399, 274 390, 289 378" fill="none" stroke="#332109" stroke-width="5.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <!-- 左側甜點外框盒 -->
+            <div class="product-frame w-full h-[475px] pt-7 pb-3 px-5 flex flex-col justify-between relative shadow-xl">
+
+                <!-- 2 欄甜點網格 (可上下順暢滑動) -->
+                <div id="itemsContainer" class="custom-scroll grid grid-cols-2 gap-x-5 gap-y-4 overflow-y-auto pr-1 flex-1 content-start">
+                    <!-- 由 JS 渲染 6 款預設甜點 -->
+                </div>
+
+                <!-- 底部按鈕列：清除所有品項、匯出報表、新增品項 -->
+                <div class="pt-2.5 mt-2 border-t border-[#e2e583]/30 flex items-center justify-between gap-2">
+                    <button onclick="promptClearAllItems()" class="px-3 py-1.5 rounded-full border border-[#e2e583]/60 text-[#e2e583] hover:bg-[#e2e583]/15 active:scale-95 text-xs mantou-text flex items-center gap-1 transition">
+                        🗑️ 清除所有品項
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <button onclick="openHistoryReportModal()" class="px-3.5 py-1.5 rounded-full bg-[#f4ced4] text-[#332109] hover:brightness-95 active:scale-95 text-xs mantou-text flex items-center gap-1 shadow transition">
+                            📊 匯出報表
+                        </button>
+                        <button onclick="openAddItemModal()" class="px-3.5 py-1.5 rounded-full bg-[#e2e583] text-[#332109] hover:brightness-95 active:scale-95 text-xs mantou-text flex items-center gap-1 shadow transition">
+                            ➕ 新增品項
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 右側：粉色收銀機 + 疊在計算機右下角上的「今日收入」星芒 ==================== -->
+        <div class="w-[460px] shrink-0 flex flex-col justify-start items-center relative">
+
+            <!-- 粉色收銀機本體 -->
+            <div class="register-outer w-[435px] h-[545px] relative z-10">
+                <div class="register-inner pb-6">
+
+                    <!-- 頂部白色螢幕 -->
+                    <div class="register-screen h-[122px]">
+                        <!-- 第一排：已選品項清單 + 右上角現金/轉帳小切換鍵 -->
+                        <div class="flex items-start justify-between gap-2">
+                            <div id="orderItemsText" class="text-[12px] leading-snug text-[#332109] mantou-text line-clamp-2 flex-1">
+                                尚未選取品項
+                            </div>
+                            <!-- 現金 / 轉帳 備註切換小膠囊 -->
+                            <button id="paymentToggleBtn" onclick="togglePaymentMethod()" 
+                                    class="shrink-0 px-2 py-0.5 rounded border border-[#332109] bg-[#e2e583] text-[#332109] text-[11px] mantou-text active:scale-95 transition">
+                                💵 現金
+                            </button>
+                        </div>
+
+                        <!-- 第二排：加總算式 + 右下黃綠描邊大總計數字 -->
+                        <div class="flex items-end justify-between gap-2 mt-1">
+                            <div id="formulaText" class="text-[18px] text-[#332109] mantou-text tracking-tight truncate max-w-[235px]">
+                                0
+                            </div>
+                            <div id="bigTotalText" class="screen-big-total text-[48px]">
+                                0
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 下方按鍵區：左 3 欄圓形數字鍵 + 右 1 欄橢圓功能鍵 -->
+                    <div class="flex flex-row items-start justify-between gap-3 flex-1 pt-4">
+
+                        <!-- 左側數字鍵盤 (1~9, 0, 00) -->
+                        <div class="grid grid-cols-3 gap-x-3 gap-y-3 w-[258px]">
+                            <button onclick="pressNum('1')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">1</button>
+                            <button onclick="pressNum('2')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">2</button>
+                            <button onclick="pressNum('3')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">3</button>
+
+                            <button onclick="pressNum('4')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">4</button>
+                            <button onclick="pressNum('5')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">5</button>
+                            <button onclick="pressNum('6')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">6</button>
+
+                            <button onclick="pressNum('7')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">7</button>
+                            <button onclick="pressNum('8')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">8</button>
+                            <button onclick="pressNum('9')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">9</button>
+
+                            <button onclick="pressNum('0')" class="key-btn w-[76px] h-[72px] rounded-full text-[36px] mantou-text">0</button>
+                            <button onclick="pressNum('00')" class="key-btn col-span-2 w-[164px] h-[72px] rounded-full text-[36px] mantou-text">00</button>
+                        </div>
+
+                        <!-- 右側 4 顆橢圓功能鍵 (稍微往上收攏，讓出右下角給星芒疊放而不擋住確認鍵) -->
+                        <div class="flex flex-col justify-between h-[268px] w-[104px]">
+                            <!-- 折扣鍵 + 右上角小鉛筆編輯優惠 -->
+                            <div class="relative w-full h-[58px]">
+                                <button id="friendBtn" onclick="toggleFriendDiscount()" class="key-btn w-full h-full rounded-[999px] text-[21px] mantou-text">
+                                    <span id="friendBtnLabel">折扣</span>
+                                </button>
+                                <button onclick="event.stopPropagation(); openFriendModal()" 
+                                        title="編輯折扣優惠"
+                                        class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#332109] text-[#e2e583] border border-white text-xs flex items-center justify-center shadow active:scale-90">
+                                    ✎
+                                </button>
+                            </div>
+
+                            <button onclick="clearCurrentOrder()" class="key-btn w-full h-[58px] rounded-[999px] text-[21px] mantou-text">
+                                清除
+                            </button>
+
+                            <button onclick="showSubtotalNotice()" class="key-btn w-full h-[58px] rounded-[999px] text-[21px] mantou-text">
+                                小計
+                            </button>
+
+                            <button onclick="confirmCheckout()" class="key-btn w-full h-[58px] rounded-[999px] text-[21px] mantou-text">
+                                確認
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 「今日收入」星芒：使用完整 SVG 多角星芒並浮在計算機右下角上方，四面八方的尖角完整無缺 -->
+            <div onclick="openHistoryReportModal()" 
+                 title="點擊查看今日結帳紀錄與匯出報表"
+                 class="income-starburst absolute -bottom-7 right-0 z-30 w-[235px] h-[126px] flex flex-col items-center justify-center select-none">
+                <svg viewBox="-8 -8 256 146" class="w-full h-full absolute inset-0 overflow-visible drop-shadow-xl pointer-events-none">
+                    <polygon points="120,2 148,19 194,6 188,33 236,44 206,66 234,94 186,101 182,126 138,110 102,128 74,106 20,116 36,88 2,68 36,48 18,20 72,26 90,2"
+                             fill="#e2e583" stroke="#332109" stroke-width="2.5" stroke-linejoin="round" />
+                </svg>
+                <span class="relative z-10 text-[16px] text-[#332109] mantou-text tracking-wider leading-none mt-1">今日收入</span>
+                <span id="dailyIncomeDisplay" class="relative z-10 income-number-stroke text-[32px] leading-tight tracking-tight">
+                    $0
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== 彈窗 1：新增 / 編輯甜點品項 ==================== -->
+    <div id="itemModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+        <div class="bg-[#f4ced4] border-[3px] border-[#332109] rounded-3xl p-6 w-full max-w-sm shadow-2xl text-[#332109]">
+            <h3 id="itemModalTitle" class="text-xl mantou-text text-center mb-4">編輯品項</h3>
+            <div class="space-y-3 text-sm">
+                <div>
+                    <label class="block text-xs mb-1">口味（第一行）：</label>
+                    <input id="inputFlavor" type="text" placeholder="例：焦化奶油" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs mb-1">類別（第二行）：</label>
+                    <input id="inputCategory" type="text" placeholder="例：瑪德蓮" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs mb-1">價格 ($)：</label>
+                        <input id="inputPrice" type="number" placeholder="40" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1">庫存數量：</label>
+                        <input id="inputStock" type="number" placeholder="10" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between mt-6 gap-2">
+                <button id="deleteItemBtn" onclick="deleteEditingItem()" class="px-3 py-2 rounded-xl bg-white border-2 border-[#332109] text-xs mantou-text active:scale-95">刪除此品項</button>
+                <div class="flex gap-2 ml-auto">
+                    <button onclick="closeItemModal()" class="px-4 py-2 rounded-xl bg-white border-2 border-[#332109] text-sm mantou-text">取消</button>
+                    <button onclick="saveItemModal()" class="px-5 py-2 rounded-xl bg-[#e2e583] border-2 border-[#332109] text-sm mantou-text">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 彈窗 2：編輯「折扣」優惠設定 ==================== -->
+    <div id="friendModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+        <div class="bg-[#f4ced4] border-[3px] border-[#332109] rounded-3xl p-6 w-full max-w-sm shadow-2xl text-[#332109]">
+            <h3 class="text-xl mantou-text text-center mb-4">編輯「折扣」優惠欄位</h3>
+            <div class="space-y-3 text-sm">
+                <div>
+                    <label class="block text-xs mb-1">按鈕文字名稱：</label>
+                    <input id="friendLabelInput" type="text" placeholder="折扣" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs mb-1">優惠方式：</label>
+                    <select id="friendModeSelect" onchange="updateFriendModalHint()" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                        <option value="per_item">每個品項折抵固定金額 ($)</option>
+                        <option value="order_flat">整筆訂單總額折抵 ($)</option>
+                        <option value="percent">整筆訂單打折 (%)</option>
+                        <option value="none">暫無優惠（折 0 元 / 僅標記）</option>
+                    </select>
+                </div>
+                <div id="friendValueBox">
+                    <label id="friendValueTitle" class="block text-xs mb-1">折抵金額 ($)：</label>
+                    <input id="friendValueInput" type="number" placeholder="5" class="w-full px-3 py-2 rounded-xl border-2 border-[#332109] bg-white font-bold focus:outline-none">
+                    <p id="friendValueHint" class="text-[11px] mt-1 opacity-80">預設 5 代表每個品項折 5 元</p>
+                </div>
+            </div>
+            <div class="flex justify-end gap-2 mt-6">
+                <button onclick="closeFriendModal()" class="px-4 py-2 rounded-xl bg-white border-2 border-[#332109] text-sm mantou-text">取消</button>
+                <button onclick="saveFriendModal()" class="px-5 py-2 rounded-xl bg-[#e2e583] border-2 border-[#332109] text-sm mantou-text">儲存設定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 彈窗 3：點擊「今日收入」彈出之結帳紀錄 & 匯出報表視窗 ==================== -->
+    <div id="historyReportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+        <div class="bg-[#f4ced4] border-[3px] border-[#332109] rounded-3xl p-6 w-full max-w-2xl max-h-[88vh] flex flex-col justify-between shadow-2xl text-[#332109]">
+            
+            <!-- 標題與關閉 -->
+            <div class="flex items-center justify-between pb-3 border-b-2 border-[#332109]/20">
+                <h3 class="text-xl mantou-text">📊 今日結帳紀錄 & 報表匯出</h3>
+                <button onclick="closeHistoryReportModal()" class="w-8 h-8 rounded-full bg-white border-2 border-[#332109] text-base mantou-text flex items-center justify-center">✕</button>
+            </div>
+
+            <!-- 四大統計小卡 -->
+            <div class="grid grid-cols-4 gap-2.5 my-3 text-center">
+                <div class="bg-[#e2e583] border-2 border-[#332109] rounded-2xl p-2.5">
+                    <div class="text-[11px]">今日總收入</div>
+                    <div id="reportTotalSum" class="text-xl mantou-text mt-0.5">$0</div>
+                </div>
+                <div class="bg-white border-2 border-[#332109] rounded-2xl p-2.5">
+                    <div class="text-[11px]">💵 現金收入</div>
+                    <div id="reportCashSum" class="text-xl mantou-text mt-0.5">$0</div>
+                </div>
+                <div class="bg-white border-2 border-[#332109] rounded-2xl p-2.5">
+                    <div class="text-[11px]">📱 轉帳收入</div>
+                    <div id="reportTransferSum" class="text-xl mantou-text mt-0.5">$0</div>
+                </div>
+                <div class="bg-white border-2 border-[#332109] rounded-2xl p-2.5">
+                    <div class="text-[11px]">🧾 結帳筆數</div>
+                    <div id="reportOrderCount" class="text-xl mantou-text mt-0.5">0 筆</div>
+                </div>
+            </div>
+
+            <!-- 逐筆結帳明細列表 -->
+            <div id="orderHistoryList" class="custom-scroll flex-1 overflow-y-auto bg-white border-2 border-[#332109] rounded-2xl p-3 space-y-2 min-h-[200px] max-h-[300px]">
+                <!-- JS 動態生成每筆紀錄 -->
+            </div>
+
+            <!-- 底部匯出與操作按鈕列 -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-4 mt-2 border-t-2 border-[#332109]/20">
+                <button onclick="promptResetTodayIncome()" class="px-3.5 py-2 rounded-xl bg-white border-2 border-[#332109] text-xs mantou-text active:scale-95">
+                    歸零今日紀錄
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="copyTextReport()" class="px-4 py-2 rounded-xl bg-white border-2 border-[#332109] text-xs mantou-text active:scale-95 shadow">
+                        📋 複製文字報表 (貼至 LINE/備忘錄)
+                    </button>
+                    <button onclick="exportCSVReport()" class="px-4 py-2 rounded-xl bg-[#e2e583] border-2 border-[#332109] text-xs mantou-text active:scale-95 shadow">
+                        📥 匯出 CSV 報表 (Excel/Numbers)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 彈窗 4：二次確認與通用訊息提示 ==================== -->
+    <div id="confirmDialogModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+        <div class="bg-white border-[3px] border-[#332109] rounded-3xl p-6 w-full max-w-sm shadow-2xl text-[#332109] text-center">
+            <h3 id="confirmDialogTitle" class="text-lg mantou-text mb-2">確認操作</h3>
+            <p id="confirmDialogText" class="text-sm font-bold mb-5 leading-relaxed"></p>
+            <div class="flex gap-2">
+                <button onclick="closeConfirmDialog()" class="flex-1 py-2 rounded-xl bg-gray-100 border-2 border-[#332109] text-sm mantou-text">取消</button>
+                <button id="confirmDialogOkBtn" class="flex-1 py-2 rounded-xl bg-[#e2e583] border-2 border-[#332109] text-sm mantou-text">確定</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="noticeModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+        <div class="bg-white border-[3px] border-[#332109] rounded-3xl p-6 w-full max-w-sm shadow-2xl text-[#332109] text-center">
+            <h3 id="noticeTitle" class="text-xl mantou-text mb-2">提示</h3>
+            <div id="noticeBody" class="text-sm font-bold mb-5 leading-relaxed"></div>
+            <button onclick="closeNoticeModal()" class="w-full py-2.5 rounded-xl bg-[#e2e583] border-2 border-[#332109] text-base mantou-text">好的</button>
+        </div>
+    </div>
+
+    <!-- ==================== 完整 JavaScript 邏輯 ==================== -->
+    <script>
+        // 原圖預設 6 款甜點品項
+        const DEFAULT_ITEMS = [
+            { id: '1', flavor: '焦化奶油', category: '瑪德蓮', price: 40, stock: 10 },
+            { id: '2', flavor: '肉桂蘋果', category: '可麗露', price: 80, stock: 10 },
+            { id: '3', flavor: '檸檬糖霜', category: '瑪德蓮', price: 40, stock: 10 },
+            { id: '4', flavor: '藍莓伯爵', category: '可麗露', price: 80, stock: 10 },
+            { id: '5', flavor: '草莓乳酪', category: '可麗露', price: 80, stock: 10 },
+            { id: '6', flavor: '鹹蛋黃肉鬆', category: '巴斯克', price: 150, stock: 10 }
+        ];
+
+        let items = [];
+        let cart = []; // 當前選取的甜點
+        let cashInput = ''; // 數字鍵輸入的實收金額
+        let isFriendActive = false; // 是否啟用朋友優惠
+        let paymentMethod = '現金'; // '現金' | '轉帳'
+        let editingItemId = null;
+
+        // 折扣優惠設定（預設每項 -5 元）
+        let friendConfig = {
+            label: '折扣',
+            mode: 'per_item', // 'per_item' | 'order_flat' | 'percent' | 'none'
+            value: 5
+        };
+
+        // 歷史結帳訂單紀錄
+        let orderHistory = [];
+
+        window.onload = function() {
+            loadAllData();
+            renderProducts();
+            updateScreen();
+            updateDailyStarburst();
+        };
+
+        // 讀取 LocalStorage 資料
+        function loadAllData() {
+            try {
+                const savedItems = localStorage.getItem('dog_pos_items_v2');
+                items = savedItems ? JSON.parse(savedItems) : JSON.parse(JSON.stringify(DEFAULT_ITEMS));
+            } catch (e) {
+                items = JSON.parse(JSON.stringify(DEFAULT_ITEMS));
+            }
+
+            try {
+                const savedFriend = localStorage.getItem('dog_pos_friend_v2');
+                if (savedFriend) {
+                    friendConfig = JSON.parse(savedFriend);
+                    if (friendConfig.label === '朋友') friendConfig.label = '折扣';
+                }
+            } catch (e) {}
+
+            try {
+                const savedHistory = localStorage.getItem('dog_pos_history_v2');
+                orderHistory = savedHistory ? JSON.parse(savedHistory) : [];
+            } catch (e) {
+                orderHistory = [];
+            }
+
+            document.getElementById('friendBtnLabel').innerText = friendConfig.label || '折扣';
+        }
+
+        function saveItems() {
+            localStorage.setItem('dog_pos_items_v2', JSON.stringify(items));
+        }
+
+        function saveFriendConfig() {
+            localStorage.setItem('dog_pos_friend_v2', JSON.stringify(friendConfig));
+            document.getElementById('friendBtnLabel').innerText = friendConfig.label || '折扣';
+        }
+
+        function saveHistory() {
+            localStorage.setItem('dog_pos_history_v2', JSON.stringify(orderHistory));
+            updateDailyStarburst();
+        }
+
+        // 渲染左側甜點卡片（完全依照原圖排版：左上庫存框 + 黃綠大膠囊 + 口味換行類別大字 + 右側深咖色圓形價格）
+        function renderProducts() {
+            const container = document.getElementById('itemsContainer');
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-2 h-64 flex flex-col items-center justify-center text-[#e2e583]">
+                        <p class="text-base mantou-text mb-1">目前沒有品項</p>
+                        <p class="text-xs opacity-80">請點擊下方「➕ 新增品項」新增甜點</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = items.map(item => `
+                <div class="flex flex-col relative pt-3">
+                    <!-- 左上角庫存方框 + 編輯小按鈕 -->
+                    <div class="stock-box absolute top-0 left-2">
+                        <span>庫存：${item.stock}</span>
+                        <button onclick="event.stopPropagation(); openEditItemModal('${item.id}')" 
+                                title="編輯品項"
+                                class="ml-1 text-[#e2e583] hover:scale-110 transition">
+                            ✎
+                        </button>
+                    </div>
+
+                    <!-- 黃綠色膠囊主按鈕 (字體適中、強制單行不換行，如「焦化奶油」保持同一行) -->
+                    <button onclick="addItemToCart('${item.id}')"
+                            ${item.stock <= 0 ? 'disabled' : ''}
+                            class="item-capsule w-full h-[72px] pl-4 pr-2 flex items-center justify-between shadow-md ${item.stock <= 0 ? 'opacity-40 cursor-not-allowed' : ''}">
+                        <div class="flex flex-col items-center justify-center flex-1 pr-1.5 leading-tight overflow-hidden">
+                            <span class="text-[16px] text-[#332109] mantou-text tracking-normal whitespace-nowrap">${item.flavor}</span>
+                            <span class="text-[15px] text-[#332109] mantou-text tracking-normal whitespace-nowrap mt-0.5">${item.category}</span>
+                        </div>
+                        <div class="price-circle w-[52px] h-[52px] text-[17px] mantou-text">
+                            $${item.price}
+                        </div>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // 點選甜點加入目前結帳單
+        function addItemToCart(id) {
+            const target = items.find(i => i.id === id);
+            if (!target) return;
+
+            // 檢查目前購物車已選數量是否超過庫存
+            const countInCart = cart.filter(i => i.id === id).length;
+            if (countInCart >= target.stock) {
+                showNotice('庫存不足', `「${target.flavor}${target.category}」目前庫存僅剩 ${target.stock} 個！`);
+                return;
+            }
+
+            cashInput = ''; // 點選商品時重置實收輸入
+            cart.push({
+                id: target.id,
+                flavor: target.flavor,
+                category: target.category,
+                price: target.price
+            });
+            updateScreen();
+        }
+
+        // 計算單筆折扣後金額
+        function calculateCartSummary() {
+            const count = cart.length;
+            if (count === 0) return { rawSum: 0, discount: 0, finalTotal: 0, formulaParts: [] };
+
+            let rawSum = 0;
+            let discount = 0;
+            let formulaParts = [];
+
+            if (isFriendActive && friendConfig.mode === 'per_item') {
+                const perOff = Number(friendConfig.value) || 0;
+                cart.forEach(item => {
+                    rawSum += item.price;
+                    const discountedItemPrice = Math.max(0, item.price - perOff);
+                    formulaParts.push(discountedItemPrice);
+                });
+                const finalTotal = formulaParts.reduce((a, b) => a + b, 0);
+                discount = rawSum - finalTotal;
+                return { rawSum, discount, finalTotal, formulaParts };
+            } else {
+                cart.forEach(item => {
+                    rawSum += item.price;
+                    formulaParts.push(item.price);
+                });
+                if (isFriendActive) {
+                    if (friendConfig.mode === 'order_flat') {
+                        discount = Number(friendConfig.value) || 0;
+                    } else if (friendConfig.mode === 'percent') {
+                        const pct = Number(friendConfig.value) || 100;
+                        const afterPct = Math.round(rawSum * (pct / 100));
+                        discount = Math.max(0, rawSum - afterPct);
+                    }
+                }
+                const finalTotal = Math.max(0, rawSum - discount);
+                return { rawSum, discount, finalTotal, formulaParts };
+            }
+        }
+
+        // 更新白色計算機螢幕顯示
+        function updateScreen() {
+            const itemsEl = document.getElementById('orderItemsText');
+            const formulaEl = document.getElementById('formulaText');
+            const totalEl = document.getElementById('bigTotalText');
+
+            const { rawSum, discount, finalTotal, formulaParts } = calculateCartSummary();
+
+            // 1. 頂部品項文字（如原圖：草莓乳酪可麗露、鹹蛋黃肉鬆巴斯克...（朋友））
+            if (cart.length === 0) {
+                itemsEl.innerText = isFriendActive ? `尚未選取品項（${friendConfig.label}）` : '尚未選取品項';
+            } else {
+                const names = cart.map(i => `${i.flavor}${i.category}`).join('、');
+                itemsEl.innerText = isFriendActive ? `${names}（${friendConfig.label}）` : names;
+            }
+
+            // 2. 中間算式區（如原圖：80+150+45+80）
+            if (cart.length === 0) {
+                formulaEl.innerText = cashInput ? `實收 $${cashInput}` : '0';
+            } else {
+                let expr = formulaParts.join('+');
+                if (isFriendActive && (friendConfig.mode === 'order_flat' || friendConfig.mode === 'percent') && discount > 0) {
+                    expr += `-${discount}`;
+                }
+                if (cashInput !== '') {
+                    expr = `應收${finalTotal} / 實收${cashInput}`;
+                }
+                formulaEl.innerText = expr;
+            }
+
+            // 3. 右下角大數字
+            if (cashInput !== '') {
+                totalEl.innerText = cashInput;
+            } else {
+                totalEl.innerText = finalTotal;
+            }
+        }
+
+        // 切換現金 / 轉帳備註
+        function togglePaymentMethod() {
+            paymentMethod = (paymentMethod === '現金') ? '轉帳' : '現金';
+            const btn = document.getElementById('paymentToggleBtn');
+            if (paymentMethod === '現金') {
+                btn.innerText = '💵 現金';
+                btn.className = 'shrink-0 px-2 py-0.5 rounded border border-[#332109] bg-[#e2e583] text-[#332109] text-[11px] mantou-text active:scale-95 transition';
+            } else {
+                btn.innerText = '📱 轉帳';
+                btn.className = 'shrink-0 px-2 py-0.5 rounded border border-[#332109] bg-[#f4ced4] text-[#332109] text-[11px] mantou-text active:scale-95 transition';
+            }
+        }
+
+        // 點擊數字鍵 0-9, 00
+        function pressNum(numStr) {
+            if (cashInput.length >= 6) return;
+            if (cashInput === '' && (numStr === '0' || numStr === '00')) {
+                cashInput = '0';
+            } else if (cashInput === '0') {
+                cashInput = numStr === '00' ? '0' : numStr;
+            } else {
+                cashInput += numStr;
+            }
+            updateScreen();
+        }
+
+        // 切換「朋友」優惠啟用狀態
+        function toggleFriendDiscount() {
+            isFriendActive = !isFriendActive;
+            const btn = document.getElementById('friendBtn');
+            if (isFriendActive) {
+                btn.style.backgroundColor = '#e2e583';
+            } else {
+                btn.style.backgroundColor = '#ffffff';
+            }
+            updateScreen();
+        }
+
+        // 清除鍵
+        function clearCurrentOrder() {
+            cart = [];
+            cashInput = '';
+            isFriendActive = false;
+            document.getElementById('friendBtn').style.backgroundColor = '#ffffff';
+            updateScreen();
+        }
+
+        // 小計鍵
+        function showSubtotalNotice() {
+            if (cart.length === 0) {
+                showNotice('小計', '目前尚未選取任何甜點品項喔！');
+                return;
+            }
+            const { finalTotal, discount } = calculateCartSummary();
+            // 統計各品項數量
+            const counts = {};
+            cart.forEach(i => {
+                const key = `${i.flavor}${i.category}`;
+                counts[key] = (counts[key] || 0) + 1;
+            });
+            const detailLines = Object.entries(counts).map(([k, v]) => `${k} × ${v}`).join('<br>');
+            const friendNote = isFriendActive ? `<br><span class="text-xs">（已套用${friendConfig.label}優惠：折抵 $${discount}）</span>` : '';
+            showNotice('目前小計明細', `${detailLines}${friendNote}<br><div class="mt-2 pt-2 border-t border-[#332109]/20 text-lg">應收總計：$${finalTotal}</div>`);
+        }
+
+        // 確認鍵（完成結帳、扣庫存、記錄交易、累加今日收入）
+        function confirmCheckout() {
+            if (cart.length === 0) {
+                showNotice('尚未選取品項', '請先點選左側的甜點品項再按確認結帳喔！');
+                return;
+            }
+
+            const { finalTotal, discount } = calculateCartSummary();
+            let changeHtml = '';
+
+            if (cashInput !== '') {
+                const paid = parseInt(cashInput, 10);
+                if (paid < finalTotal) {
+                    showNotice('實收金額不足', `實收 $${paid} 小於應收金額 $${finalTotal}！`);
+                    return;
+                }
+                const change = paid - finalTotal;
+                changeHtml = `<br>實收金額：$${paid}<br><span class="text-lg underline">應找零：$${change}</span>`;
+            }
+
+            // 1. 扣除對應庫存
+            cart.forEach(c => {
+                const target = items.find(i => i.id === c.id);
+                if (target && target.stock > 0) {
+                    target.stock -= 1;
+                }
+            });
+            saveItems();
+
+            // 2. 寫入結帳紀錄
+            const now = new Date();
+            const timeStr = now.toTimeString().slice(0, 8);
+            const dateStr = now.toISOString().slice(0, 10);
+            const record = {
+                orderId: String(Date.now()),
+                date: dateStr,
+                time: timeStr,
+                items: JSON.parse(JSON.stringify(cart)),
+                paymentMethod: paymentMethod,
+                isFriend: isFriendActive,
+                friendLabel: isFriendActive ? friendConfig.label : '',
+                discount: discount,
+                total: finalTotal
+            };
+            orderHistory.unshift(record);
+            saveHistory();
+
+            // 3. 顯示結帳完成提示
+            showNotice(
+                '結帳完成！',
+                `付款方式：${paymentMethod}${isFriendActive ? `（${friendConfig.label}優惠）` : ''}<br>結帳總額：<b>$${finalTotal}</b>${changeHtml}`
+            );
+
+            // 4. 清空當前購物車並刷新畫面
+            clearCurrentOrder();
+            renderProducts();
+        }
+
+        // 更新右下角「今日收入」星芒數字
+        function updateDailyStarburst() {
+            const totalIncome = orderHistory.reduce((sum, r) => sum + r.total, 0);
+            document.getElementById('dailyIncomeDisplay').innerText = `$${totalIncome}`;
+        }
+
+        // ==================== 品項新增 / 編輯 / 刪除 / 清除全部 ====================
+        function openAddItemModal() {
+            editingItemId = null;
+            document.getElementById('itemModalTitle').innerText = '新增甜點品項';
+            document.getElementById('inputFlavor').value = '';
+            document.getElementById('inputCategory').value = '';
+            document.getElementById('inputPrice').value = '';
+            document.getElementById('inputStock').value = '10';
+            document.getElementById('deleteItemBtn').classList.add('hidden');
+            document.getElementById('itemModal').classList.remove('hidden');
+        }
+
+        function openEditItemModal(id) {
+            const target = items.find(i => i.id === id);
+            if (!target) return;
+            editingItemId = id;
+            document.getElementById('itemModalTitle').innerText = '編輯甜點品項';
+            document.getElementById('inputFlavor').value = target.flavor;
+            document.getElementById('inputCategory').value = target.category;
+            document.getElementById('inputPrice').value = target.price;
+            document.getElementById('inputStock').value = target.stock;
+            document.getElementById('deleteItemBtn').classList.remove('hidden');
+            document.getElementById('itemModal').classList.remove('hidden');
+        }
+
+        function closeItemModal() {
+            document.getElementById('itemModal').classList.add('hidden');
+            editingItemId = null;
+        }
+
+        function saveItemModal() {
+            const flavor = document.getElementById('inputFlavor').value.trim();
+            const category = document.getElementById('inputCategory').value.trim();
+            const price = parseInt(document.getElementById('inputPrice').value, 10);
+            const stock = parseInt(document.getElementById('inputStock').value, 10);
+
+            if (!flavor || !category || isNaN(price) || isNaN(stock)) {
+                showNotice('欄位未填寫完整', '請輸入完整的口味、類別、價格與庫存數量！');
+                return;
+            }
+
+            if (editingItemId) {
+                const target = items.find(i => i.id === editingItemId);
+                if (target) {
+                    target.flavor = flavor;
+                    target.category = category;
+                    target.price = Math.max(0, price);
+                    target.stock = Math.max(0, stock);
+                }
+            } else {
+                items.push({
+                    id: String(Date.now()),
+                    flavor,
+                    category,
+                    price: Math.max(0, price),
+                    stock: Math.max(0, stock)
+                });
+            }
+
+            saveItems();
+            renderProducts();
+            closeItemModal();
+        }
+
+        function deleteEditingItem() {
+            if (!editingItemId) return;
+            items = items.filter(i => i.id !== editingItemId);
+            cart = cart.filter(i => i.id !== editingItemId);
+            saveItems();
+            renderProducts();
+            updateScreen();
+            closeItemModal();
+        }
+
+        function promptClearAllItems() {
+            openConfirmDialog(
+                '確定要清除所有品項嗎？',
+                '這將會一鍵清空目前菜單上的所有品項、價格與庫存數。',
+                function() {
+                    items = [];
+                    cart = [];
+                    saveItems();
+                    renderProducts();
+                    updateScreen();
+                }
+            );
+        }
+
+        // ==================== 折扣優惠編輯彈窗 ====================
+        function openFriendModal() {
+            document.getElementById('friendLabelInput').value = friendConfig.label || '折扣';
+            document.getElementById('friendModeSelect').value = friendConfig.mode || 'per_item';
+            document.getElementById('friendValueInput').value = friendConfig.value !== undefined ? friendConfig.value : 5;
+            updateFriendModalHint();
+            document.getElementById('friendModal').classList.remove('hidden');
+        }
+
+        function updateFriendModalHint() {
+            const mode = document.getElementById('friendModeSelect').value;
+            const box = document.getElementById('friendValueBox');
+            const title = document.getElementById('friendValueTitle');
+            const hint = document.getElementById('friendValueHint');
+
+            if (mode === 'none') {
+                box.classList.add('hidden');
+            } else {
+                box.classList.remove('hidden');
+                if (mode === 'per_item') {
+                    title.innerText = '每個品項折抵金額 ($)：';
+                    hint.innerText = '例如輸入 5 代表每個品項折 5 元';
+                } else if (mode === 'order_flat') {
+                    title.innerText = '整筆訂單折抵金額 ($)：';
+                    hint.innerText = '例如輸入 20 代表整筆訂單總額減 20 元';
+                } else if (mode === 'percent') {
+                    title.innerText = '整筆打折折數 (%)：';
+                    hint.innerText = '例如輸入 90 代表打 9 折、85 代表 85 折';
+                }
+            }
+        }
+
+        function closeFriendModal() {
+            document.getElementById('friendModal').classList.add('hidden');
+        }
+
+        function saveFriendModal() {
+            const label = document.getElementById('friendLabelInput').value.trim() || '折扣';
+            const mode = document.getElementById('friendModeSelect').value;
+            let val = parseFloat(document.getElementById('friendValueInput').value);
+            if (isNaN(val) || val < 0) val = 0;
+
+            friendConfig = { label, mode, value: val };
+            saveFriendConfig();
+            updateScreen();
+            closeFriendModal();
+        }
+
+        // ==================== 今日結帳紀錄 & 報表匯出 (點擊今日收入星芒開啟) ====================
+        function openHistoryReportModal() {
+            renderHistoryReportContent();
+            document.getElementById('historyReportModal').classList.remove('hidden');
+        }
+
+        function closeHistoryReportModal() {
+            document.getElementById('historyReportModal').classList.add('hidden');
+        }
+
+        function renderHistoryReportContent() {
+            const totalSum = orderHistory.reduce((s, r) => s + r.total, 0);
+            const cashSum = orderHistory.filter(r => r.paymentMethod === '現金').reduce((s, r) => s + r.total, 0);
+            const transferSum = orderHistory.filter(r => r.paymentMethod === '轉帳').reduce((s, r) => s + r.total, 0);
+
+            document.getElementById('reportTotalSum').innerText = `$${totalSum}`;
+            document.getElementById('reportCashSum').innerText = `$${cashSum}`;
+            document.getElementById('reportTransferSum').innerText = `$${transferSum}`;
+            document.getElementById('reportOrderCount').innerText = `${orderHistory.length} 筆`;
+
+            const listEl = document.getElementById('orderHistoryList');
+            if (orderHistory.length === 0) {
+                listEl.innerHTML = `<div class="h-40 flex items-center justify-center text-sm opacity-60">今日尚無任何結帳紀錄</div>`;
+                return;
+            }
+
+            listEl.innerHTML = orderHistory.map((rec, idx) => {
+                const number = orderHistory.length - idx;
+                const itemCounts = {};
+                rec.items.forEach(i => {
+                    const name = `${i.flavor}${i.category}`;
+                    itemCounts[name] = (itemCounts[name] || 0) + 1;
+                });
+                const summaryStr = Object.entries(itemCounts).map(([k, v]) => `${k}×${v}`).join('、');
+                const badgeMethod = rec.paymentMethod === '現金' ? '💵 現金' : '📱 轉帳';
+                const badgeFriend = rec.isFriend ? `<span class="px-1.5 py-0.5 rounded bg-[#e2e583] text-[10px]">${rec.friendLabel || '朋友'}</span>` : '';
+
+                return `
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#f4ced4]/35 border border-[#332109]/30 text-xs">
+                        <div class="flex flex-col gap-0.5 pr-2">
+                            <div class="flex items-center gap-2">
+                                <span class="mantou-text">#${number}</span>
+                                <span class="opacity-75">${rec.time}</span>
+                                <span class="px-1.5 py-0.5 rounded bg-white border border-[#332109] text-[10px]">${badgeMethod}</span>
+                                ${badgeFriend}
+                            </div>
+                            <div class="font-bold text-[#332109] mt-0.5">${summaryStr}</div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <span class="text-base mantou-text">$${rec.total}</span>
+                            <button onclick="voidSingleOrder('${rec.orderId}')" 
+                                    class="px-2 py-1 rounded-lg bg-white border border-[#332109] text-[11px] hover:bg-red-100 active:scale-95">
+                                作廢回補
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 單筆作廢並自動回補庫存
+        function voidSingleOrder(orderId) {
+            const target = orderHistory.find(r => r.orderId === orderId);
+            if (!target) return;
+
+            openConfirmDialog(
+                '確定作廢此筆交易？',
+                `作廢後將扣除營收 $${target.total}，並自動將該筆甜點數量加回庫存。`,
+                function() {
+                    target.items.forEach(soldItem => {
+                        const prod = items.find(i => i.id === soldItem.id);
+                        if (prod) prod.stock += 1;
+                    });
+                    orderHistory = orderHistory.filter(r => r.orderId !== orderId);
+                    saveItems();
+                    saveHistory();
+                    renderProducts();
+                    renderHistoryReportContent();
+                }
+            );
+        }
+
+        // 歸零今日營收紀錄
+        function promptResetTodayIncome() {
+            if (orderHistory.length === 0) return;
+            openConfirmDialog(
+                '確定要歸零今日收入嗎？',
+                '這將會清空今天所有的結帳紀錄並將今日收入歸零（不會更動目前庫存）。',
+                function() {
+                    orderHistory = [];
+                    saveHistory();
+                    renderHistoryReportContent();
+                }
+            );
+        }
+
+        // 匯出 CSV 報表 (支援 Excel / iPad Numbers 繁體中文不亂碼)
+        function exportCSVReport() {
+            if (orderHistory.length === 0) {
+                showNotice('尚無資料', '目前還沒有任何結帳紀錄可以匯出喔！');
+                return;
+            }
+
+            let csv = '\uFEFF單號,日期,時間,付款方式,優惠標記,折抵金額,結帳總額,購買品項明細\n';
+            const chronological = [...orderHistory].reverse();
+
+            chronological.forEach((rec, i) => {
+                const counts = {};
+                rec.items.forEach(it => {
+                    const k = `${it.flavor}${it.category}`;
+                    counts[k] = (counts[k] || 0) + 1;
+                });
+                const detail = Object.entries(counts).map(([k, v]) => `${k}x${v}`).join(' / ');
+                const friendStr = rec.isFriend ? (rec.friendLabel || '朋友') : '一般';
+                csv += `${i + 1},${rec.date},${rec.time},${rec.paymentMethod},${friendStr},${rec.discount || 0},${rec.total},"${detail}"\n`;
+            });
+
+            const totalSum = orderHistory.reduce((s, r) => s + r.total, 0);
+            const cashSum = orderHistory.filter(r => r.paymentMethod === '現金').reduce((s, r) => s + r.total, 0);
+            const transferSum = orderHistory.filter(r => r.paymentMethod === '轉帳').reduce((s, r) => s + r.total, 0);
+            csv += `\n總計,,,現金:$${cashSum},轉帳:$${transferSum},總營收,$${totalSum},共 ${orderHistory.length} 筆\n`;
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const today = new Date().toISOString().slice(0, 10);
+            a.href = url;
+            a.download = `被狗咬一口_今日報表_${today}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // 複製文字報表（方便在 iPad 直接貼到 LINE 或備忘錄）
+        function copyTextReport() {
+            const today = new Date().toISOString().slice(0, 10);
+            const totalSum = orderHistory.reduce((s, r) => s + r.total, 0);
+            const cashSum = orderHistory.filter(r => r.paymentMethod === '現金').reduce((s, r) => s + r.total, 0);
+            const transferSum = orderHistory.filter(r => r.paymentMethod === '轉帳').reduce((s, r) => s + r.total, 0);
+
+            // 統計各商品今日售出總數
+            const soldSummary = {};
+            orderHistory.forEach(r => {
+                r.items.forEach(it => {
+                    const name = `${it.flavor}${it.category}`;
+                    soldSummary[name] = (soldSummary[name] || 0) + 1;
+                });
+            });
+            const soldLines = Object.entries(soldSummary).map(([k, v]) => `・${k}：售出 ${v} 個`).join('\n') || '・尚無售出紀錄';
+            const stockLines = items.map(it => `・${it.flavor}${it.category}：剩餘 ${it.stock} 個`).join('\n');
+
+            const text = `🐶【被狗咬一口】市集結帳報表 (${today})\n` +
+                         `━━━━━━━━━━━━━━\n` +
+                         `💰 今日總收入：$${totalSum}\n` +
+                         `💵 現金收入：$${cashSum}\n` +
+                         `📱 轉帳收入：$${transferSum}\n` +
+                         `🧾 總交易筆數：${orderHistory.length} 筆\n` +
+                         `━━━━━━━━━━━━━━\n` +
+                         `📦【今日銷售統計】\n${soldLines}\n` +
+                         `━━━━━━━━━━━━━━\n` +
+                         `🧁【目前剩餘庫存】\n${stockLines}`;
+
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+
+            showNotice('已複製文字報表！', '報表已複製到剪貼簿，現在可以直接打開 LINE 或備忘錄貼上囉！');
+        }
+
+        // ==================== 通用確認框與提示框 ====================
+        function openConfirmDialog(title, text, onConfirm) {
+            document.getElementById('confirmDialogTitle').innerText = title;
+            document.getElementById('confirmDialogText').innerText = text;
+            const okBtn = document.getElementById('confirmDialogOkBtn');
+            okBtn.onclick = function() {
+                closeConfirmDialog();
+                if (onConfirm) onConfirm();
+            };
+            document.getElementById('confirmDialogModal').classList.remove('hidden');
+        }
+
+        function closeConfirmDialog() {
+            document.getElementById('confirmDialogModal').classList.add('hidden');
+        }
+
+        function showNotice(title, htmlBody) {
+            document.getElementById('noticeTitle').innerText = title;
+            document.getElementById('noticeBody').innerHTML = htmlBody;
+            document.getElementById('noticeModal').classList.remove('hidden');
+        }
+
+        function closeNoticeModal() {
+            document.getElementById('noticeModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
